@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="minh" extends="struts-default" namespace="/">
+		<!-- FAQ management -->
+		<action name="FAQ_saveAndUpdate" class="com.thuocdo.ma.Action.FAQAction"
+			method="saveAndUpdate">
+			<result name="success" type="redirect">FAQ_view</result>
+			<result name="input" type="redirect">FAQ_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="FAQ_edit" class="com.thuocdo.ma.Action.FAQAction"
+			method="edit">
+			<result name="success">FAQsManagement.jsp</result>
+			<result name="input" type="redirect">FAQ_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="FAQ_delete" class="com.thuocdo.ma.Action.FAQAction"
+			method="delete">
+			<result name="success" type="redirect">FAQ_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="FAQ_deleteMany" class="com.thuocdo.ma.Action.FAQAction"
+			method="deleteMany">
+			<result name="success" type="redirect">FAQ_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="FAQ_view" class="com.thuocdo.ma.Action.FAQAction">
+			<result name="success">FAQsManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="FAQ_viewForCustomer" class="com.thuocdo.ma.Action.FAQAction"
+			method="viewForCustomer">
+			<result name="success">faqs.jsp</result>
+
+		</action>
+		<!-- Account management -->
+		<action name="Account_view" class="com.thuocdo.ma.Action.AccountAction"
+			method="execute">
+			<result name="success">AccountManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Account_saveAndUpdate" class="com.thuocdo.ma.Action.AccountAction"
+			method="saveAndUpdate">
+			<result name="success" type="redirect">Account_view</result>
+			<result name="input" type="redirect">Account_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Account_edit" class="com.thuocdo.ma.Action.AccountAction"
+			method="edit">
+			<result name="success">AccountManagement.jsp</result>
+			<result name="input" type="redirect">Account_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Account_delete" class="com.thuocdo.ma.Action.AccountAction"
+			method="delete">
+			<result name="success" type="redirect">Account_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Account_deleteMany" class="com.thuocdo.ma.Action.AccountAction"
+			method="deleteMany">
+			<result name="success" type="redirect">Account_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Account_login" class="com.thuocdo.ma.Action.AccountAction"
+			method="login">
+			<result name="success" type="redirect">index.action</result>
+			<result name="input">Login.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="Account_logout" class="com.thuocdo.ma.Action.AccountAction"
+			method="logout">
+			<result name="success" type="redirect">index</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Account_viewProfile" class="com.thuocdo.ma.Action.AccountAction"
+			method="view">
+			<result name="success">viewProfile.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Account_editProfile" class="com.thuocdo.ma.Action.AccountAction"
+			method="view">
+			<result name="success">EditProfile.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Account_saveEditProfile" class="com.thuocdo.ma.Action.AccountAction"
+			method="saveAndUpdate">
+			<result name="success" type="redirect">Account_viewProfile</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Account_viewRegister" class="com.thuocdo.ma.Action.AccountAction"
+			method="viewRegister">
+			<result name="success">register.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Account_saveRegister" class="com.thuocdo.ma.Action.AccountAction"
+			method="saveRegister">
+			<result name="success" type="redirect">index</result>
+			<result name="error">register.jsp</result>
+		</action>
+		<action name="Account_changePassword" class="com.thuocdo.ma.Action.AccountAction"
+			method="changePassword">
+			<result name="success" type="redirect">Account_viewProfile</result>
+			<result name="input">changePassword.jsp</result>
+			<result name="error">changePassword.jsp</result>
+		</action>
+		<!-- index page -->
+		<action name="index" class="com.thuocdo.ma.Action.IndexAction">
+			<result name="success">index.jsp</result>
+		</action>
+		<!-- Role action -->
+		<action name="Role_save" class="com.thuocdo.ma.Action.RoleAction"
+			method="saveRole">
+			<result name="success" type="redirect">Role_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Role_view" class="com.thuocdo.ma.Action.RoleAction">
+			<result name="success">RoleManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Role_choiseRole" class="com.thuocdo.ma.Action.RoleAction"
+			method="getOneRole">
+			<result name="success">RoleManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Role_delete" class="com.thuocdo.ma.Action.RoleAction"
+			method="deleteRole">
+			<result name="success" type="redirect">Role_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Role_deleteAll" class="com.thuocdo.ma.Action.RoleAction"
+			method="deleteRoles">
+			<result name="success" type="redirect">Role_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<!-- Job management -->
+		<action name="Job_saveAndUpdate" class="com.thuocdo.ma.Action.JobAction"
+			method="saveAndUpdate">
+			<result name="success" type="redirect">Job_view</result>
+			<result name="input" type="redirect">Job_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Job_edit" class="com.thuocdo.ma.Action.JobAction"
+			method="edit">
+			<result name="success">JobManagement.jsp</result>
+			<result name="input" type="redirect">Job_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Job_delete" class="com.thuocdo.ma.Action.JobAction"
+			method="delete">
+			<result name="success" type="redirect">Job_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Job_deleteMany" class="com.thuocdo.ma.Action.JobAction"
+			method="deleteMany">
+			<result name="success" type="redirect">Job_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Job_view" class="com.thuocdo.ma.Action.JobAction">
+			<result name="success">JobManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<!-- Survey  -->
+		<action name="Survey_delete" class="com.thuocdo.ma.Action.SurveyAction"
+			method="deleteSurvey">
+			<result name="success" type="redirect">Survey_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Survey_deleteMany" class="com.thuocdo.ma.Action.SurveyAction"
+			method="deleteManySurvey">
+			<result name="success" type="redirect">Survey_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Survey_search" class="com.thuocdo.ma.Action.SurveyAction"
+			method="search">
+			<result name="success">SurveyManagement.jsp</result>
+		</action>
+		<action name="Survey_surveyByCategory" class="com.thuocdo.ma.Action.SurveyAction"
+			method="displaySurveyByCategory">
+			<result name="success">SurveyByCategory.jsp</result>
+		</action>
+		<action name="Survey_managementForCustomer" class="com.thuocdo.ma.Action.SurveyAction"
+			method="surveyManagementForCustomer">
+			<result name="success">SurveyManagementForCustomer.jsp</result>
+		</action>
+		<action name="Survey_deleteOfCustomer" class="com.thuocdo.ma.Action.SurveyAction"
+			method="deleteSurvey">
+			<result name="success" type="redirect">Survey_managementForCustomer</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Survey_deleteManyOfCustomer" class="com.thuocdo.ma.Action.SurveyAction"
+			method="deleteManySurvey">
+			<result name="success" type="redirect">Survey_managementForCustomer</result>
+			<result name="error">message.jsp</result>
+		</action>
+	</package>
+</struts>

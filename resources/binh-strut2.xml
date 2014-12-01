@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="binh" extends="struts-default" namespace="/">
+		<action name="Category_view" class="com.thuocdo.ma.Action.CategoryAction"
+			method="execute">
+			<result name="success">CategorySurveyManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Category_delete" class="com.thuocdo.ma.Action.CategoryAction"
+			method="delete">
+			<result name="success" type="chain">Category_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Category_deleteMany" class="com.thuocdo.ma.Action.CategoryAction"
+			method="deleteMany">
+			<result name="success">CategorySurveyManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Category_edit" class="com.thuocdo.ma.Action.CategoryAction"
+			method="edit">
+			<result name="success">CategorySurveyManagement.jsp</result>
+			<result name="input" type="redirect">Category_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Category_save" class="com.thuocdo.ma.Action.CategoryAction"
+			method="save">
+			<result name="success" type="redirect">Category_view</result>
+			<result name="input" type="redirect">Category_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Survey_view" class="com.thuocdo.ma.Action.SurveyAction"
+			method="viewSurvey">
+			<result name="success">SurveyManagement.jsp</result>
+			<result name="input" type="redirect">index.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Survey_detail" class="com.thuocdo.ma.Action.SurveyAction"
+			method="viewSurveyDetail">
+			<result name="success">DetailSurveyManagement.jsp</result>
+			<result name="input" type="redirect">index.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+			<action name="viewLstAnswer" class="com.thuocdo.ma.Action.AnswerAction"
+			method="viewLstAnswer">
+			<result name="success">survey.jsp</result>
+			<result name="input" type="redirect">index.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="JoinSurvey_view" class="com.thuocdo.ma.Action.JoinSurveyAction"
+			method="getOneSurvey">
+			<result name="success" >survey.jsp</result>
+			<result name="input" type="redirect">index.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+			<action name="Survey_detailbyID" class="com.thuocdo.ma.Action.SurveyAction"
+			method="viewSurveyDetail">
+			<result name="success">surveystep1.jsp</result>
+			<result name="input" type="redirect">index.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+			<action name="Survey_report" class="com.thuocdo.ma.Action.ResultAction"
+			method="processData">
+			<result name="success">surveystep3.jsp</result>
+			<result name="input" type="redirect">index.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		
+			<action name="getResultbyID" class="com.thuocdo.ma.Action.ResultAction"
+			method="getResultbyID">
+			<result name="success">reportresult.jsp</result>
+			<result name="input" type="redirect">index.jsp</result>
+			<result name="error">message.jsp</result>
+			</action>
+			
+		 
+	</package>
+	
+</struts>

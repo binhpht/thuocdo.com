@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<package name="hien" extends="struts-default" namespace="/">
+		<!-- Role action -->
+		<action name="Role_save" class="com.thuocdo.ma.Action.RoleAction" method="saveRole">
+			<result name="success">RoleManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Role_view" class="com.thuocdo.ma.Action.RoleAction">
+			<result name="success">RoleManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Role_choiseRole" class="com.thuocdo.ma.Action.RoleAction" method="getOneRole">
+			<result name="success">RoleManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Role_delete" class="com.thuocdo.ma.Action.RoleAction" method="deleteRole">
+			<result name="success">RoleManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Role_deleteAll" class="com.thuocdo.ma.Action.RoleAction" method="deleteRoles">
+			<result name="success">RoleManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<!-- Add Survey action-->
+		
+		<action name="Survey_addSurvey" class="com.thuocdo.ma.Action.SurveyAction">
+			<result name="success">AddSurveyStep1.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Survey_addSurveyStep1" class="com.thuocdo.ma.Action.SurveyAction" method="addSurveyStep1">
+			<result name="success">AddSurveyStep2.jsp</result>
+			<result name="EDIT">QuestionManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Survey_addSurveyStep2" class="com.thuocdo.ma.Action.SurveyAction" method="addSurveyStep2">
+			<result name="success">QuestionManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Question_choiseQuestion" class="com.thuocdo.ma.Action.SurveyAction" method="choiseQuestion">
+			<result name="success">EditQuestion.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Question_EditQuestion" class="com.thuocdo.ma.Action.SurveyAction" method="editQuestion">
+			<result name="success">QuestionManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Question_AddNewQuestion" class="com.thuocdo.ma.Action.SurveyAction" method="addNewQuestion">
+			<result name="success">AddSurveyStep2.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Question_deleteMany" class="com.thuocdo.ma.Action.SurveyAction" method="deleteManyQuestion">
+			<result name="success">QuestionManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Survey_addSurveyStep3" class="com.thuocdo.ma.Action.SurveyAction" method="addSurveyStep3">
+			<result name="success">SurveyManagement.jsp</result>
+			<result name="customersuccess" >SurveyManagementForCustomer.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Survey_backStep1" class="com.thuocdo.ma.Action.SurveyAction" method="backStep">
+			<result name="success">AddSurveyStep1.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Survey_backStep2" class="com.thuocdo.ma.Action.SurveyAction" method="backStep">
+			<result name="success">QuestionManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<!-- Edit survey action -->
+		
+		<action name="Survey_editSurvey" class="com.thuocdo.ma.Action.SurveyAction" method="getOneSurvey">
+			<result name="success">EditSurveyStep1.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Survey_editSurveyStep1" class="com.thuocdo.ma.Action.SurveyAction" method="editSurveyStep1">
+			<result name="success">EditSurveyStep2.2.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="EditSurvey_AddNewQuestion_View" class="com.thuocdo.ma.Action.SurveyAction" method="addNewQuestion">
+			<result name="success">EditSurveyStep2.1.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="EditSurvey_choiseQuestion" class="com.thuocdo.ma.Action.SurveyAction" method="editSurvey_choiseQuestion">
+			<result name="success">EditSurvey_EditQuestion.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="EditSurvey_EditQuestion" class="com.thuocdo.ma.Action.SurveyAction" method="editSurvey_editQuestion">
+			<result name="success">EditSurveyStep2.2.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="EditSurvey_backStep2" class="com.thuocdo.ma.Action.SurveyAction" method="editSurvey_getSurveyFromSession">
+			<result name="success">EditSurveyStep2.2.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="EditSurvey_backStep1" class="com.thuocdo.ma.Action.SurveyAction" method="editSurvey_backStep1">
+			<result name="success">EditSurveyStep1.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="EditSurvey_AddNewQuestion" class="com.thuocdo.ma.Action.SurveyAction" method="editSurvey_addNewQuesion">
+			<result name="success">EditSurveyStep2.2.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		
+		<action name="EditSurvey_deleteManyQuestion" class="com.thuocdo.ma.Action.SurveyAction" method="editSurvey_deleteManyQuestion">
+			<result name="success">EditSurveyStep2.2.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="EditSurvey_NextToStep3" class="com.thuocdo.ma.Action.SurveyAction" method="editSurvey_getSurveyFromSession">
+			<result name="success">EditSurveyStep3.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="EditSurvey_editSurveyStep3" class="com.thuocdo.ma.Action.SurveyAction" method="editSurvey_editSurveyStep3">
+			<result name="success">SurveyManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<!-- Join survey -->
+		
+		<action name="JoinSurvey_getSurvey" class="com.thuocdo.ma.Action.JoinSurveyAction" method="getOneSurvey">
+			<result name="success">JoinSurvey_Introduction.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="JoinSurvey_joinSurvey" class="com.thuocdo.ma.Action.JoinSurveyAction" method="checkRole">
+			<result name="success" type="redirect">JoinSurvey_viewSurvey</result>
+			<result name="GUEST">JoinSurvey_GuestInfor.jsp</result>
+			<result name="REGISTOR">JoinSurvey_Message.jsp</result>
+			<result name="ISSURVEYED">JoinSurvey_Message.jsp</result>
+			<result name="INAPPROPRIATE">JoinSurvey_Message.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="JoinSurvey_saveJoinSurvey" class="com.thuocdo.ma.Action.JoinSurveyAction" method="addNewJoinSurvey">
+			<result name="success">JoinSurvey_Thanks.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Account_saveGuestInfor" class="com.thuocdo.ma.Action.AccountAction" method="addGuestInfor">
+			<result name="success" type="redirect">JoinSurvey_joinSurvey</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="JoinSurvey_viewSurvey" class="com.thuocdo.ma.Action.JoinSurveyAction" method="reGetSurvey">
+			<result name="success">JoinSurvey_survey.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="Illegal_illegalReason" class="com.thuocdo.ma.Action.IllegalAction" method="reportIllegal">
+			<result name="success">JoinSurvey_Thanks.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Illegal_Management" class="com.thuocdo.ma.Action.IllegalAction" method="getIllegalSurveys">
+			<result name="success">IllegalManagement.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Illegal_GetIllegalSurvey" class="com.thuocdo.ma.Action.IllegalAction" method="viewIllegalSurve">
+			<result name="success">Illegal_viewIllegalSurvey.jsp</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Illegal_ConfirmIllegal" class="com.thuocdo.ma.Action.IllegalAction" method="illegal_ConfirmIllegal">
+			<result name="success" type="redirect">Illegal_Management</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Illegal_ConfirmLegal" class="com.thuocdo.ma.Action.IllegalAction" method="illegal_ConfirmLegal">
+			<result name="success" type="redirect">Illegal_Management</result>
+			<result name="error">message.jsp</result>
+		</action>
+		
+		<action name="Illegal_DeleteIllegals" class="com.thuocdo.ma.Action.IllegalAction" method="deleteManyIllegal">
+			<result name="success" type="redirect">Illegal_Management</result>
+			<result name="error">message.jsp</result>
+		</action>
+	</package>
+</struts>

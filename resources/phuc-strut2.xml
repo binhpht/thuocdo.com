@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="phuc" extends="struts-default" namespace="/">
+	<!-- AgeRank management -->
+		<action name="AgeRank_saveAndUpdate" class="com.thuocdo.ma.Action.AgeRankAction"
+			method="saveAndUpdate">
+			<result name="success" type="redirect">AgeRank_view</result>
+			<result name="input" type="redirect">AgeRank_view</result>
+			<result name="error">message.jsp</result>
+		</action>
+		<action name="AgeRank_edit" class="com.thuocdo.ma.Action.AgeRankAction"
+			method="edit">
+			<result name="success">AgeRankManagement.jsp</result>
+			<result name="input" type="redirect">AgeRank_view</result>
+		</action>
+		<action name="AgeRank_delete" class="com.thuocdo.ma.Action.AgeRankAction"
+			method="delete">
+			<result name="success" type="redirect">AgeRank_view</result>
+		</action>
+		<action name="AgeRank_deleteMany" class="com.thuocdo.ma.Action.AgeRankAction"
+			method="deleteMany">
+			<result name="success" type="redirect">AgeRank_view</result>
+		</action>
+		<action name="AgeRank_view" class="com.thuocdo.ma.Action.AgeRankAction">
+			<result name="success">AgeRankManagement.jsp</result>
+		</action>			
+	</package>
+</struts>
